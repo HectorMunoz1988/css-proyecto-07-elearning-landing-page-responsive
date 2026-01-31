@@ -1,0 +1,18 @@
+
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+.container {
+  //max-width: 1600px;  // limita el ancho máximo
+  //margin: 0 auto;     // centra horizontalmente
+  padding: 0 16px;      // espacio interno lateral para no pegarse a la pantalla
+  @include m.breakpoint(tablet) {
+    padding: 0 39px;
+  }
+  
+  @include m.breakpoint(desktop) {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

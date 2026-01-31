@@ -1,0 +1,130 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero {
+    position: relative;
+
+    .img-tablet {
+        display: none;
+        @include m.breakpoint(tablet) {
+            display: block;
+            width: 310px;
+            position: absolute;
+            top: -20px;
+            right: 0px;
+        }
+        @include m.breakpoint(desktop) {
+            display: none;
+        }
+    }
+
+    .img-desktop {
+        display: none;
+        z-index: -1;
+
+        @include m.breakpoint(tablet) {
+            display: none;
+        }
+        @include m.breakpoint(desktop) {
+            display: block;
+            width: 500px;
+            position: absolute;
+            top: -90px;
+            right: calc((100vw - 1200px) / 2);
+        }
+    }
+
+
+    .container {
+        @include m.breakpoint(tablet) {
+            display: flex;
+        }
+
+        .hero__content {
+            @include m.breakpoint(tablet) {
+                margin-bottom: 186px;
+            }
+            .hero__title {
+                margin-bottom: 26px;
+                padding-top: 38px;
+                font-weight: 800; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                font-size: 40px;
+                @include m.breakpoint(tablet) {
+                    padding-top: 99px;
+                }
+            }
+
+            .hero__subtitle {
+                margin-bottom: 24px;
+                font-weight: 500; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                font-size: 16px;
+                line-height: 26px;
+                color: v.$grey;
+            }
+        }
+
+        .hero__img{
+            margin: 46px auto 66px auto; // top | right | bottom | left 
+            width: 87%;
+            text-align: center; // centra contenido inline/inline-block 
+            position: relative;
+            
+            @include m.breakpoint(tablet) {
+                margin: 36px auto 99px auto; // top | right | bottom | left 
+                display: flex;
+                justify-content: center; // centra horizontal 
+                align-items: center;     // centra vertical 
+            }
+
+            .img-mobile {
+                width: 260px;
+                max-width: 506px;
+                padding: 24px 0px;
+                @include m.breakpoint(tablet) {
+                    display: none;
+                }
+                @include m.breakpoint(desktopxl) {
+                    display: none;
+                }
+            }            
+
+            .hero__number {
+                display: flex;
+                flex-direction: column; // row(por defecto) | row-reverse | column | column-reverse 
+                background-color: white;
+                border-radius: 16px; // top-left | top-right | bottom-right | bottom-left ▓ 5px | 0.5em | 10% | 50% 
+                padding: 16px 20px;
+                width: fit-content;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+                .title {
+                    font-weight: 700; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                    font-size: 14px;
+                    line-height: 28px;
+                    color: v.$grey;
+                }
+
+                .number {
+                    font-weight: 800; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                    font-size: 32px;
+                    line-height: 100%;
+                    color: v.$black;
+                }
+            }
+
+            .hero__number1 {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+            }
+
+            .hero__number2 {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            
+        }
+    }
+}

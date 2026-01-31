@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+
+.btn-primary {
+  @include m.button();
+}
+
+.btn-secondary {
+  @include m.button(
+    $bg: v.$gradient-orange-pink,
+    $padding: 15px 37px,
+    $radius: 31px,
+    $hover-bg: v.$gradient-orange-pink-hover
+  );
+}
+
+.btn-tertiary {
+  @include m.button(
+    $bg: v.$gradient-blue-pink,
+    $hover-bg: v.$gradient-blue-pink-hover
+  );
+}

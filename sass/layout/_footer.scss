@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+footer {
+    padding: 36px 0px;
+    background: v.$black;
+
+    .container {
+        display: flex;
+        justify-content: space-between; // flex-start(por defecto) | flex-end | center | space-between | space-around | space-evenly 
+        align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline 
+
+        ul {
+            list-style: none; // elimina el marcador "•" de la lista 
+        }
+    }
+}

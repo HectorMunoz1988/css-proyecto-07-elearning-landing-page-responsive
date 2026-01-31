@@ -1,0 +1,100 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.activities {
+    background: v.$gradient-white-grey;
+
+    .container {
+        padding-bottom: 80px;
+
+        @include m.breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr; // 200px 1fr 2fr auto 30% 
+            gap: 32px 10px;
+        }
+        
+        @include m.breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; // 200px 1fr 2fr auto 30% 
+            gap: 30px 56px;
+        }
+
+        .header {
+            background: v.$gradient-orange-pink;
+            padding: 24px 29px 32px 28px;
+            border-radius: 16px;
+            @include m.breakpoint(tablet) {
+                margin-top: 24px;
+            }
+
+            h2 {
+                color: white;
+                font-weight: 800; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                font-size: 24px;
+                line-height: 32px;
+                @include m.breakpoint(tablet) {
+                    padding-top: 32px;
+                }
+            }
+        }
+
+        article {
+            margin-top: 16px;
+            padding-top: 24px;
+            position: relative;
+
+            span {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 56px; // 200px | 10em | 5rem | 75% 
+                height: 56px;
+                background: v.$gradient-orange-pink;
+                border-radius: 50%;
+                position: absolute;
+                top: 0px;
+                left: 28px;
+            }
+
+            div {
+                padding: 0px 28px;
+                background-color: white;
+                border-radius: 16px;
+                height: 280px;
+
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    padding-top: 56px;
+                    font-weight: 800; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                    font-size: 20px;
+                    line-height: 100%;
+                    color: v.$black;
+                }
+
+                p {
+                    padding-top: 16px;
+                    font-weight: 500; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: v.$grey;
+                }
+
+                a {
+                    margin-top: auto;
+                    display: block;
+                    padding-top: 24px;
+                    padding-bottom: 32px;
+                    text-decoration: none; // elimina el subrayado 
+                    font-weight: 700; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: v.$pink;
+
+                }
+            }
+        }
+    }
+}
